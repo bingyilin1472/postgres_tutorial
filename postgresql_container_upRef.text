@@ -1,0 +1,18 @@
+於此資料夾，也就是docker-compose
+(其中-d daemon是表示背景執行意思)
+docker-compose up -d
+
+檢視看看是否pg-container啟用up
+docker container ls -a
+
+可關閉正在執行的container(docker container ls -a可看到該container status: exited)
+docker container stop pgContainerID
+
+可重新執行container(docker container ls -a可看到該container status: up)
+docker container start pgContainerID
+
+可進去到容器中觀看(home dir會有我們綁定的transferred dir)
+同時docker-compose.yml資料夾所在也產生了一個transferred dir可雙向放資料
+(同時pg_database_data，中在資料庫啟動後就產生內容，讓你可以完整複製走此db)
+docker exec -it pgContainerID bash
+輸入exit則可以離開該container

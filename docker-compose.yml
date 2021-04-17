@@ -1,0 +1,15 @@
+version: '3'
+services:
+  pg_database:
+    image: "postgres"
+    ports:
+      - 5432:5432
+    env_file:
+      - pg_database.env
+    volumes:
+      # 前為為local host的對應dir、後為container中對應的dir(二者綁定)
+      # 會在當前目錄產生一個pg_database_data dir，.表示current dir
+      - ./pg_database_data/:/var/lib/postgresql/data/
+      # 通常我會建立一個轉移占用資料夾，方便將外部內容轉入container中
+      # 會在當前目錄產生一個transferred_temp dir，.表示current dir
+      - ./transferred_temp:/transferred_temp/
