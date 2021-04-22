@@ -1,0 +1,3 @@
+1. 建立表格前必須先要有database，這邊建立一個叫做practice1
+2. 建立好practice1 db後就可以運作該兩個.sql檔案中的內容
+(可在自己部屬的db上測試，或者到https://pg-sql.com/該網站輸入.sql內容測試)

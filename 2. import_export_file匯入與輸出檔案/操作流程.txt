@@ -1,0 +1,6 @@
+1. 建立表格前必須先要有database，這邊建立一個叫做filmDatasets
+2. 執行1_films_tables_create.sql來建立相關的tables
+3. 以pgAdmin GUI方式匯入table的records/rows
+    這邊已經整理好.csv，分隔符號delimiter要設置, 逗號
+    (通常data都是要經過資料處理來，這個是已經處理好的)
+    其中films分成，films1.csv、films.csv，想表達說他可以分批次上傳，會銜接上
