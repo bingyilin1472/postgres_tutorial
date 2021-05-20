@@ -1,0 +1,49 @@
+例題1:
+1. 
+SELECT title, release_year
+FROM films
+WHERE release_year = 2016;
+2. 
+SELECT title, release_year
+FROM films
+WHERE release_year > 2000;
+3.
+SELECT title, release_year
+FROM films
+WHERE release_year < 2000;
+4.
+SELECT title, budget
+FROM films
+WHERE budget > 10000;
+5.
+SELECT COUNT(title)
+FROM films
+WHERE budget > 10000;
+
+例題2:
+1.
+SELECT title, release_year
+FROM films
+WHERE
+release_year >= 1994 OR release_year < 2000;
+2.
+SELECT title, release_year, language
+FROM films
+WHERE
+(release_year >= 1994 OR release_year < 2000)
+AND
+(language = 'Spanish' OR language = 'French');
+
+例題3:
+1.
+SELECT title, release_year, budget, language
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget > 100000000
+AND language = 'Spanish'
+2.
+SELECT title, release_year, budget, language
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget < 100000000
+AND (language = 'Spanish' OR language = 'French');
