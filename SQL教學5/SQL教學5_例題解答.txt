@@ -1,0 +1,69 @@
+例題練習1:
+SELECT name
+FROM people
+WHERE deathdate IS NULL;
+
+例題練習2:
+SELECT title
+FROM films
+WHERE budget IS NULL;
+
+例題練習3:
+SELECT COUNT(*)
+FROM films
+WHERE language IS NULL;
+
+例題練習4:
+SELECT name
+FROM people
+WHERE name LIKE 'B%';
+
+例題練習5:
+SELECT name
+FROM people
+WHERE name LIKE '_r%';
+
+例題練習6:
+SELECT name
+FROM people
+WHERE name NOT LIKE 'A%';
+
+例題練習7:
+SELECT SUM(duration)
+FROM films;
+
+例題練習8:
+SELECT AVG(duration)
+FROM films;
+
+例題練習9:
+SELECT MIN(duration), MAX(duration)
+FROM films;
+
+例題練習10:
+SELECT SUM(gross), AVG(gross), MIN(gross), MAX(gross)
+FROM films;
+
+例題練習11:
+SELECT SUM(gross)
+FROM films
+WHERE release_year >= 2000;
+
+例題練習12:
+SELECT AVG(gross)
+FROM films
+WHERE title LIKE 'A%';
+
+例題練習13:
+SELECT MIN(gross)
+FROM films
+WHERE release_year = 1994;
+
+例題練習14:
+SELECT MAX(gross)
+FROM films
+WHERE release_year BETWEEN 2000 AND 2012;
+
+例題練習15:
+SELECT title, duration/60.0 AS duration_hours
+FROM films;
