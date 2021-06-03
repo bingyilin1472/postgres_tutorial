@@ -1,0 +1,34 @@
+練習1:
+    子題1:
+    SELECT *
+    FROM cities
+    INNER JOIN countries
+    ON cities.country_code = countries.code;
+    子題2:
+    SELECT cities.name AS city, countries.name AS country, countries.region
+    FROM cities
+    INNER JOIN countries
+    ON cities.country_code = countries.code;
+
+練習2:
+SELECT c.code AS country_code, name, year, inflation_rate
+FROM countries AS c
+INNER JOIN economies AS e
+ON c.code = e.code;
+
+練習3:
+SELECT code, name, region, year, fertility_rate
+FROM countries AS c
+INNER JOIN populations AS p
+ON  c.code = p.country_code;
+
+練習4:
+    子題1
+        觀察題(無解答)
+    子題2
+    SELECT c.code, name, region, e.year AS e_year, p.year AS p_year, fertility_rate, unemployment_rate
+      FROM countries AS c
+      INNER JOIN populations AS p
+        ON c.code = p.country_code
+      INNER JOIN economies AS e
+        ON p.year = e.year AND e.code = c.code;
