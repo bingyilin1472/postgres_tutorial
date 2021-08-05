@@ -1,0 +1,19 @@
+因為我們有針對已存的pg對應其中的內容到外部dir
+    volumes:
+      # 前為為local host的對應dir、後為container中對應的dir(二者綁定)
+      # 會在當前目錄產生一個pg_database_data dir，.表示current dir
+      - ./pg_database_data/:/var/lib/postgresql/data/
+所以可以將volume對應出來的內容複製/下載出來搬移到其他host/vps上
+(不過由於檔案很多，解壓縮起來搬移的效率較高)
+
+建立壓縮檔案 -cvf ，c是壓縮檔案的意思: 壓縮後就可以下載搬移
+tar -cvf 壓縮檔案期望名稱.tar 當前位置的dirName/
+EX:
+    tat -cvf xxx.tar pg_database_data/
+解壓縮檔案 -xvf，x是解壓縮的意思: 啟動服務前先把壓縮檔案解壓縮(volumes會同步進去到container內，就可以實踐搬移內容)
+tar -xvf 壓縮檔案名稱
+
+總結:
+    將已存的pg service/container映射到外部的volume解壓縮，到想要部屬的host上指定位置(參考docker-compose.yml的設定)
+    然後將該壓縮檔案，解壓縮對應到映射到volume的名稱dir，然後服務啟動，就會將過往資料同步到該service/container之中
+    (之後可以測試看stack deploy方式是否也是同樣的運作方式)
