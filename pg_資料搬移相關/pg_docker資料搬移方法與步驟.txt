@@ -9,7 +9,7 @@
 建立壓縮檔案 -cvf ，c是壓縮檔案的意思: 壓縮後就可以下載搬移
 tar -cvf 壓縮檔案期望名稱.tar 當前位置的dirName/
 EX:
-    tat -cvf xxx.tar pg_database_data/
+    tar -cvf xxx.tar pg_database_data/
 解壓縮檔案 -xvf，x是解壓縮的意思: 啟動服務前先把壓縮檔案解壓縮(volumes會同步進去到container內，就可以實踐搬移內容)
 tar -xvf 壓縮檔案名稱
 
